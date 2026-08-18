@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function abes(){
+        //     document.write("!not coder<br>");
+        // }
+        // abes();
+        // abes();
+
+        // const abes = () => "hello";
+        // document.write(abes());
+         const add = (a,b) => a+b;
+         const subtract = (a,b) => a-b;
+         const multiply = (a,b) => a*b;
+         const divide = (a,b) => b !==0 ? a/b : "error";
+
+         const solution = (num1,operation,num2) => {
+               switch(operation){
+                case '+': return add(10,2);
+                case '-': return subtract(100,5);
+                case '*': return multiply(5,6);
+                case '/': return divide(20,3);
+                default: return "!!!!!";
+               }
+         };    //error: not taken input
+    </script>
+</body>
+</html>
