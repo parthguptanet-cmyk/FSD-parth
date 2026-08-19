@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <style>
+        .parent{
+            display: grid;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .card{
+            height: 500px;
+            width: 500px;
+            background-color: rgb(64, 64, 74);
+        }
+        .heading{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            font-size: 3vw;
+        }
+        .card h4{
+            color: rgb(168, 168, 185);
+            font-size: 2vw;
+        }
+        .but_parent{
+            display: flex;
+            justify-content: center;
+        }
+        .okk{
+            color: rgb(120, 148, 139);
+            font-size: 1vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="card">
+            <h2 class="heading"><u>Online Shop</u></h2>
+            <h4>Tea:$2</h4>
+            <h4>Coffee: $4</h4>
+            <h4>Wheat:$10</h4>
+            <h4>Rice:$8</h4>
+            <div class="but_parent">
+            <button onclick="ad()" class="okk">Buy Now</button>
+               </div>
+        </div>
+ </div>
+
+ <script>
+    const shop = {
+        tea : 2,
+        coffe : 4,
+        wheat : 10,
+        rice : 8
+    }
+    function ad(){
+        let a = prompt("Enter your product here");
+        let b = prompt("Enter quantity");
+        document.write("Your total amount for ${a} amount is")
+        
+    }
+ </script>
+</body>
+</html>
+            
