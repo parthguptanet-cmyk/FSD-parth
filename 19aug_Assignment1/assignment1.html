@@ -50,20 +50,50 @@
         </div>
  </div>
 
- <script>
-    const shop = {
-        tea : 2,
-        coffe : 4,
-        wheat : 10,
-        rice : 8
-    }
-    function ad(){
-        let a = prompt("Enter your product here");
-        let b = prompt("Enter quantity");
-        document.write("Your total amount for ${a} amount is")
-        
-    }
- </script>
+  <script>
+
+        const shop = {
+            tea: 2,
+            coffee: 4,
+            wheat: 10,
+            rice: 8
+        };
+
+        function ad() {
+            let a = prompt(
+                "Enter your product:\nTea\nCoffee\nWheat\nRice"
+            );
+
+            if (a === null) {
+                return;
+            }
+            a = a.toLowerCase().trim();
+            if (!shop.hasOwnProperty(a)) {
+                alert("Sorry! Product not available.");
+                return;
+            }
+            let b = prompt("Enter quantity:");
+
+            if (b === null) {
+                return;
+            }
+
+            b = Number(b);
+            if (isNaN(b) || b <= 0) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+            let price = shop[a];
+            let total = price * b;
+            alert(
+                `Product: ${a}
+Quantity: ${b}
+Price per item: $${price}
+Total Amount: $${total}`
+            );
+        }
+
+    </script>
 </body>
 </html>
             
