@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment3</title>
+    <link rel="stylesheet" href="assignment.css">
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img src="https://static.vecteezy.com/system/resources/previews/057/072/669/non_2x/black-and-white-illustration-of-an-old-steam-train-on-tracks-perspective-view-iconic-with-carriages-vector.jpg" alt="train">
+            <h1>Bus Booking System</h1>
+        </div>
+
+        <div class="header2">
+            <h2>User Information</h2>
+        </div>
+        
+        <div class="form">
+            <p>User Name: <input type="text" size="20" id="name"></p>
+            <p>User Age: <input type="number" size="3" id="age"></p>
+            <p>User Aadhar no: <input type="number" size="12" id="aadhar"></p>
+            <p>Select your city: <select name="cities" id="city">
+                  <option value="" disabled selected hidden>choose city</option>
+                <option value="Meerut">Meerut</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Etawah">Etawah</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Muzzafarnagar">Muzzafarnagar</option>
+                <option value="Saharanpur">Saharanpur</option>
+            </select></p>
+            <p>Journey date: <input type="date" id=""></p>
+        </div>
+
+        <div class="header2">
+            <h2>Bus Information</h2>
+        </div>
+        <div class="form2">
+            <input type="radio" id="ac" value="AC BUS">
+            <label for="ac">AC BUS -$200</label>
+            <br>
+            <input type="radio" id="non" value="non ac">
+            <label for="non">NON AC BUS -$150</label>
+
+            <p>select your seat: <input type="number" id="seat"></p>
+        </div>
+         <div class="button1">
+             <button onclick="gotyou()">Buy Now</button>
+
+         </div>
+
+    </div>
+</body>
+</html>
