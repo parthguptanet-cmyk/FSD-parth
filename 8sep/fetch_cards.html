@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #data {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .category {
+            color: gray;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .serial {
+            font-size: 14px;
+            color: #777;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>My Shop</h1>
+
+    <div id="data"></div>
+
+    <script>
+
+        const ele = document.getElementById("data");
+
+        const URL = "https://dummyjson.com/products";
+
+        async function loadProduct() {
+
+            try {
+
+                const res = await fetch(URL);
+
+                const data = await res.json();
+
+                console.log("DATA", data.products);
+
+                let row = "";
+
+                data.products.map((i, index) => {
+
+                    row += `
+                        <div class="card">
+
+                            <div class="serial">
+                                Product ${index + 1}
+                            </div>
+
+                            <img 
+                                src="${i.images[0]}" 
+                                alt="${i.title}"
+                            >
+
+                            <h2>${i.title}</h2>
+
+                            <div class="category">
+                                Category: ${i.category}
+                            </div>
+
+                            <div class="price">
+                                $${i.price}
+                            </div>
+
+                        </div>
+                    `;
+
+                });
+
+                ele.innerHTML = row;
+
+            }
+
+            catch(err) {
+
+                console.log("Error", err);
+
+            }
+
+        }
+
+        loadProduct();
+
+    </script>
+
+</body>
+</html>
+
